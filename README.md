@@ -2,6 +2,8 @@
 
 ### Live preview:
 
+[https://medical-app-tau.vercel.app/](https://medical-app-tau.vercel.app/)
+
 ## Installation
 
 #### Node version: 16.13.2
@@ -14,3 +16,9 @@
 $ yarn install
 $ yarn start
 ```
+
+## Technologies used:
+
+- next
+- typescript
+- tailwind
