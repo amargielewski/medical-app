@@ -1,0 +1,262 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --box1: 65vh;
+  --box2: 35vh;
+}
+
+.app {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: #fafafa;
+  transition: background 1s linear;
+}
+
+.left-arrow {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  cursor: pointer;
+}
+
+.right-arrow {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.box1 {
+  width: 100%;
+  height: var(--box1);
+  position: absolute;
+  margin-top: 42px;
+  padding: 0 48px;
+}
+
+.box2 {
+  position: absolute;
+  width: 100%;
+  height: var(--box2);
+}
+
+.box1 {
+  transform: translateY(0);
+}
+
+.box2 {
+  transform: translateY(var(--box1));
+}
+
+.cgreen {
+  background: #26c299;
+}
+
+.cblue {
+  background: #0a40a1;
+}
+
+.cpink {
+  background: #fabfba;
+}
+
+@keyframes swapbox1 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(var(--box2));
+  }
+}
+
+@keyframes swapbox2 {
+  from {
+    transform: translateY(var(--box1));
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes swapbox3 {
+  from {
+    transform: translateX(-50%, -55%);
+  }
+
+  to {
+    transform: translate(-50%, 5%);
+  }
+}
+
+.swap .box1 {
+  animation: swapbox1 1s linear forwards;
+}
+
+.swap .box2 {
+  animation: swapbox2 1s linear forwards;
+}
+
+.swap .image {
+  animation: swapbox3 1s linear forwards;
+}
+
+@keyframes swapreversebox1 {
+  from {
+    transform: translateY(var(--box2));
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes swapreversebox2 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(var(--box1));
+  }
+}
+
+.swap-reverse .box1 {
+  animation: swapreversebox1 1s linear forwards;
+}
+
+.swap-reverse .box2 {
+  animation: swapreversebox2 1s linear forwards;
+}
+
+.image {
+  position: absolute;
+  padding: 0 24px;
+  max-width: 375px;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, 55%);
+}
+
+.content > div {
+  margin-bottom: 56px;
+}
+
+@media (min-width: 834px) {
+  :root {
+    --box1: 55vh;
+    --box2: 45vh;
+  }
+
+  .image {
+    max-width: 612px;
+    padding: 0;
+  }
+
+  .content {
+    margin: 40px 0;
+  }
+
+  .swap .box1 {
+    margin-top: 63px;
+  }
+  .box1 {
+    padding: 0 103px;
+    margin-top: 62px;
+  }
+
+  .left-arrow {
+    left: 40px;
+  }
+  .right-arrow {
+    right: 40px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .app {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+  }
+
+  .left-arrow {
+    left: 108px;
+  }
+  .right-arrow {
+    right: 108px;
+  }
+
+  .content {
+    max-width: 620px;
+  }
+
+  .box1 {
+    position: relative;
+    transform: none;
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .box2 {
+    transform: none;
+    position: relative;
+    flex: 1;
+    height: 100%;
+  }
+
+  .swap .box1,
+  .swap .box2,
+  .swap-reverse .box1,
+  .swap-reverse .box2 {
+    animation: none;
+  }
+
+  @keyframes swapbox4 {
+    from {
+      transform: translate(-70%, 10%);
+    }
+
+    to {
+      transform: translate(-70%, -55%);
+    }
+  }
+
+  .swap .box1 {
+    margin-top: 0;
+  }
+
+  @keyframes swapbox5 {
+    from {
+      transform: translate(-70%, -55%);
+    }
+
+    to {
+      transform: translate(-70%, 10%);
+    }
+  }
+
+  .image {
+    position: absolute;
+    left: 50%;
+    transform: translate(-70%, 10%);
+    top: 0;
+  }
+
+  .swap .image {
+    animation: swapbox4 1s linear forwards;
+  }
+
+  .swap-reverse .image {
+    animation: swapbox5 1s linear forwards;
+  }
+}
