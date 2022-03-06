@@ -2,8 +2,6 @@
 
 ### Live preview:
 
-[https://amargielewski.github.io/photo-search/](https://amargielewski.github.io/photo-search/)
-
 ## Installation
 
 #### Node version: 16.13.2
